@@ -1,2 +1,1 @@
-# web-playground-curso-django-2
-Repositorio de la Web Playground del curso Django 2
+# repositorio creado a partir de el tutorial de udemy y django girls
