@@ -31,6 +31,7 @@ urlpatterns = [
     path('profiles/', include(profiles_patterns)),
     # Paths de Messenger
     path('messenger/', include(messenger_patterns)),
+
     
 ]
 
