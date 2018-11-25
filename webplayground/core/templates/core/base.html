@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
+  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
@@ -13,12 +16,16 @@
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
   </head>
-  <body>
-    <body>
+  <body style="/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+63,ededed+88,ffffff+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 63%, rgba(237,237,237,1) 88%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 63%,rgba(237,237,237,1) 88%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 63%,rgba(237,237,237,1) 88%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */">
       <!-- Navegación -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}">Playground</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Programación</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ned" aria-controls="ned" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,11 +36,11 @@
               </li>
     
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'pages:pages' %}">Páginas</a>
+                <a class="nav-link" href="{% url 'pages:pages' %}">Artículos</a>
               </li>    
          
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'profiles:list' %}">Perfiles</a>
+                <a class="nav-link" href="{% url 'profiles:list' %}">Usuarios</a>
               </li>
               
               
@@ -48,13 +55,22 @@
                   </li>
               {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'messenger:list' %}">Mensajes</a>
+                <a class="nav-link" href="{% url 'messenger:list' %}">
+                <i class="fa fa-envelope" aria-hidden="true">
+                </i>
+                </a>
+                </li>
               </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+                  <a class="nav-link" href="{% url 'profile' %}">
+                  <i class="fa fa-user">
+                  </i>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Salir</a>
+                  <a class="nav-link" href="{% url 'logout' %}">
+                    <i class="fa fa-sign-out"></i>
+                  </a>
                 </li>
               {% endif %}
             </ul>
