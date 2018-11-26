@@ -15,6 +15,13 @@
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
+    <!-- Estilos 
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'plugins/dataTables/datatables.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'animate.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">  -->
   </head>
   <body style="/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+63,ededed+88,ffffff+100 */
 background: rgb(255,255,255); /* Old browsers */
@@ -83,5 +90,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
       <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <script src="{% static 'core/js/main.js' %}"></script>
+      <script src="{% static 'jquery-3.1.1.min.js' %}"></script>
+      <script src="{% static 'bootstrap.min.js' %}"></script>
+      <script src="{% static 'plugins/metisMenu/jquery.metisMenu.js' %}"></script>
+      <script src="{% static 'plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+      <script src="{% static 'plugins/dataTables/datatables.min.js' %}"></script>
+
+      <!-- Custom and plugin javascript -->
+      <script src="{% static 'inspinia.js' %}"></script>
+      <script src="{% static 'plugins/pace/pace.min.js' %}"></script>
+       <script>
+        $(document).ready(function(){
+            $('.dataTables-example').DataTable({
+                responsive: true,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'Reporte'},
+                    {extend: 'pdf', title: 'Reporte'},
+
+                    {extend: 'print',
+                     customize: function (win){
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                    }
+                    }
+                ]
+
+            });
+
+        });
+
+    </script>
   </body>
 </html>

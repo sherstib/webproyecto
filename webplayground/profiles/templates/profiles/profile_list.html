@@ -70,6 +70,68 @@
           </ul>
         </nav>
         {% endif %}
+        {% if not request.user.is_staff %}
+          <div>
+          </div>
+        {% else %}
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Reporte Usuarios
+          </button>
+          <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reporte Usuarios</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" >
+            <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                    
+
+                    <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                    <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Nombre</th>
+                        <th>Biografia</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for profile in profile_list %}
+                    <tr class="gradeX">
+                        <td>
+                        {% if profile.avatar %}
+                          <img src="{{profile.avatar.url}}" class="img-fluid profile-avatar">
+                        {% else %}
+                          <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-fluid profile-avatar">
+                        {% endif %}</td>
+                        <td>{{profile.user}}</td>
+                        <td>{{profile.bio}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                    </table>
+                    </div>
+
+                    </div>
+              </div>
+              <div class="modal-footer">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
